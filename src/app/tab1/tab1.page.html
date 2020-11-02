@@ -1,17 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Secretos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-list>
+      <ion-card class="ion-margin-top">
+        <div class="card-header">
+            <b class="card-title">Titulo:</b> <span class="mx-2">Titulo del secreto </span>
+        </div>
+         <ion-card-content>
+           <ion-label>   
+              <h6>Descripcion:</h6> <span>Esto es una Descripcion</span>
+           </ion-label>
+         </ion-card-content>
+      </ion-card>
+       
+</ion-list>
 </ion-content>
