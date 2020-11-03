@@ -3,16 +3,16 @@
      <div class="container">
       <div class="d-flex flex-column justify-content-center"style="height: 100vh;" >
         <div class="w-100 align-self-center">
-        <form  class="text-center mx-auto align-self-center">
+        <form  [formGroup]="loginForm" (ngSubmit)="AuthanticateUser(loginForm.value)" class="text-center mx-auto align-self-center">
             <div class="form-group my-2" >
-                <input type="email" class="form-control w-100 mx-auto p-2" placeholder="Correo electronico.">
+                <input type="email" class="form-control w-100 mx-auto p-2" placeholder="Correo electronico." formControlName='username'>
             </div>
             <div class="form-group my-2">
-                <input type="password" class="form-control w-100 mx-auto p-2"  placeholder="Contraseña" >
+                <input type="password" class="form-control w-100 mx-auto p-2"  placeholder="Contraseña" formControlName='password'>
             </div>
-            <button class="btn bg-warning text-white mt-2  w-100 border-0">Log In
-         </button>
-    </form>
+                <button type="submit" class="btn bg-warning text-white mt-2  w-100 border-0">Log In
+            </button>
+         </form>
      </div>
     </div>
     </div>
