@@ -7,17 +7,31 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<ion-list>
-      <ion-card class="ion-margin-top">
-        <div class="card-header">
-            <b class="card-title">Titulo:</b> <span class="mx-2">Titulo del secreto </span>
-        </div>
-         <ion-card-content>
-           <ion-label>   
-              <h6>Descripcion:</h6> <span>Esto es una Descripcion</span>
-           </ion-label>
-         </ion-card-content>
-      </ion-card>
-       
+<ion-list  *ngIf="lista_secretos.length > 0 ">
+          <ion-card class="ion-margin-top" *ngFor="let item of lista_secretos">
+            <div class="card-header">
+                <b class="card-title">Titulo:</b> <span class="mx-2">{{item.titulo}}</span>
+            </div>
+             <ion-card-content  *ngIf="isthereAnySecrets() else empty">
+                      <div>
+                          <h6>Descripcion:</h6> <span>{{item.descripcion}}</span>
+                          <h6>Lugar:</h6> <span>{{item.lugar}}</span>
+                          <h6>Valor Monetario:</h6> <span>{{item.valor_monetario}}</span>
+                          <h6>Coordenadas:</h6> <span>{{item.lat}} & {{item.lon}}</span>
+                      </div>
+                      <div class="position-absolute delete">
+                        <a (click)="delete(item.idSecreto)" ><ion-icon name="trash-outline"></ion-icon></a>
+                   </div>
+             </ion-card-content>
+          </ion-card>
 </ion-list>
+ 
+  <div  *ngIf="!isthereAnySecrets()">
+      <div class="d-flex justify-content-center" style="height:70vh;">
+        <div class="align-self-center text-center">
+            <h1>TODAVIA NO AGREGAS TU SECRETO.</h1>
+            <a [routerLink]="'/tabs/tab2'" class="btn text-white m-2" style="background: linear-gradient(90deg, rgba(255,0,0,0.9360119047619048) 0%, rgba(255,128,0,1) 100%);">Añadir Nuevo Secreto</a>
+        </div>
+    </div>
+  </div>
 </ion-content>

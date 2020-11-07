@@ -1,3 +1,17 @@
 ion-title{
     --color:#ff5f20; 
 }
+
+.delete {
+    text-align: center;
+    border-radius:50%;
+    bottom: 20px;
+    right: 20px;
+}
+
+    .delete {
+        a{
+            color: rgb(233, 47, 47);
+            font-size: 25px;
+        }
+    } 

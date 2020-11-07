@@ -1,7 +1,8 @@
  
 <ion-content>
      <div class="container">
-      <div class="d-flex flex-column justify-content-center"style="height: 100vh;" >
+      <div class="d-flex flex-column justify-content-center"style="height: 80vh;" >
+        <img src="../../assets/secreto.png" alt="foto-mujer-secreto" width="100" class="align-self-center mb-2">
         <div class="w-100 align-self-center">
         <form  [formGroup]="loginForm" (ngSubmit)="AuthanticateUser(loginForm.value)" class="text-center mx-auto align-self-center">
             <div class="form-group my-2" >
@@ -10,8 +11,7 @@
             <div class="form-group my-2">
                 <input type="password" class="form-control w-100 mx-auto p-2"  placeholder="Contraseña" formControlName='password'>
             </div>
-                <button type="submit" class="btn bg-warning text-white mt-2  w-100 border-0">Log In
-            </button>
+            <button class="btn text-white mt-2 px-4 py-2 border-0" type="submit" style="background: linear-gradient(90deg, rgba(255,0,0,0.9360119047619048) 0%, rgba(255,128,0,1) 100%);">Iniciar session</button>
          </form>
      </div>
     </div>
@@ -20,6 +20,8 @@
 
 <ion-footer>
   <ion-toolbar>
-    <p>No tengo una cuenta?, <b>Crear cuenta</b> </p>
+    <div class="container bg-white">
+      <p style="font-size: 14px;">No tengo una cuenta?, <b style="color:  #ff5f20;">Crear cuenta</b> </p>
+    </div>
   </ion-toolbar>
 </ion-footer>
