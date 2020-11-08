@@ -19,6 +19,10 @@ export class ApiSecretosService {
     return  this.httpClient.post<any>(`${Credenciales.APP_URL}/token`, options)
   }
 
+  signUp(usuario): Observable<any>{
+    return this.httpClient.post(`${Credenciales.APP_URL}/registro`, usuario)
+ }
+
   listaSecretos(token): Observable<any>{
 
       const header = {
