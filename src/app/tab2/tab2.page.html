@@ -7,10 +7,42 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+       <form>
+            <h2 class="m-4">Datos</h2>
+             <ion-card> 
+                <ion-item>
+                  <ion-label>Titulo:</ion-label>
+                  <ion-input type="text" placeholder="Escriba un titulo."></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Fecha:</ion-label>
+                  <ion-input type="text" placeholder="Describir su secreto."></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Lugar:</ion-label>
+                  <ion-input type="text" placeholder="Describir su secreto."></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor:</ion-label>
+                  <ion-input type="number" placeholder="Escriba un valor."></ion-input>
+                </ion-item>
+             </ion-card>
+                <h2 class="m-4">Coordenadas</h2>
+                <ion-card>                <ion-item>
+                  <ion-label>Latitud:</ion-label>
+                  <ion-input type="number" placeholder="Describir su secreto."></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Longitud:</ion-label>
+                  <ion-input type="number" placeholder="Escriba un valor."></ion-input>
+                </ion-item>
+              </ion-card>
 
-      <div class="container p-2">
-        <form>
-           
-        </form>
-    </div>
+                <h2 class="m-4">Descripcion:</h2> 
+                <ion-card>
+                <ion-item>
+                  <ion-textarea rows="6" cols="10" placeholder="Escriba una descripcion..."></ion-textarea>
+                </ion-item>
+              </ion-card>
+       </form>
 </ion-content>

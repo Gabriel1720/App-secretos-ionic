@@ -7,5 +7,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+<form class="text-center mb-4">
+    <h3 class="text-left m-4">Datos Cuenta</h3>
+     <ion-card> 
+          <ion-item>
+            <ion-label>Nombre:</ion-label>
+            <ion-input type="text" placeholder="Escriba un titulo."></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Correo:</ion-label>
+            <ion-input type="text" placeholder="Describir su secreto."></ion-input>
+          </ion-item>
+        </ion-card>
+        <button type="submit" class="btn btn-primary text-center">Modificar datos</button>
+  </form>
 
+  <form class="text-center m-2">
+    <h3 class="text-left m-4">Cambiar Contraseña</h3>
+     <ion-card> 
+          <ion-item>
+            <ion-label>Anterior:</ion-label>
+            <ion-input type="text" placeholder="Escriba un titulo."></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Nueva:</ion-label>
+            <ion-input type="text" placeholder="Describir su secreto."></ion-input>
+          </ion-item>
+        </ion-card>
+        <button type="submit" class="btn btn-primary">Guardar Contraseña</button>
+  </form>
 </ion-content>
