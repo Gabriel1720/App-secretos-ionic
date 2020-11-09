@@ -46,6 +46,13 @@ export class Tab1Page implements OnInit{
       });
   }
 
+  LogOut()
+  {
+    this.storage.clear().then(() =>{
+        this.router.navigate(['/login'])
+    })
+  }
+
 
   async PrensentToast(massage){
     const toast = await this.toastController.create({

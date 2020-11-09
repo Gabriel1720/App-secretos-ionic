@@ -10,27 +10,27 @@ import { ApiSecretosService } from '../api-secretos.service';
 })
 export class Tab3Page implements OnInit {
   signUpForm; 
-  //canSignUp:boolean;
+  canSignUp:boolean;
 
   constructor(
-    // private service: ApiSecretosService,
-    // private formBuilder: FormBuilder,
-    // private router: Router 
+     private service: ApiSecretosService,
+     private formBuilder: FormBuilder,
+     private router: Router 
   ) {}
 
    ngOnInit():void
      {
-//       this.signUpForm =  this.formBuilder.group({
-//         nombre : new FormControl('', Validators.required),
-//         correo : new FormControl(''),
-//         password : new FormControl('')
-//       });
+       /*  this.signUpForm =  this.formBuilder.group({
+         nombre : new FormControl('', Validators.required),
+          correo : new FormControl(''),
+          password : new FormControl('')
+        });*/
   }
 
 
  
  onSubmit(usuarioData): void{
-  const signUp =  this.service.signUp(usuarioData).subscribe( creado => {
+ /* const signUp =  this.service.signUp(usuarioData).subscribe( creado => {
      console.log(creado);
     // this.canSignUp = !creado.Estado ; 
      if(creado.Estado){
@@ -38,6 +38,7 @@ export class Tab3Page implements OnInit {
         this.router.navigate(['/login'])
      }
   });    
+  */
 }
 
 }
