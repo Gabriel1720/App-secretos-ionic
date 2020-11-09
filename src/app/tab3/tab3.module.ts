@@ -16,7 +16,7 @@ import { ApiSecretosService } from '../api-secretos.service';
     FormsModule,
     ReactiveFormsModule,
     ExploreContainerComponentModule,
-    Tab3PageRoutingModule,
+    Tab3PageRoutingModule
   ],
   providers: [ApiSecretosService],
   declarations: [Tab3Page]

@@ -4,7 +4,7 @@ import {Storage}  from '@ionic/storage';
 import {ISecreto} from  '../modelos.ts/ISecreto'; 
 import {ToastController, AlertController}  from '@ionic/angular';
 import {Router} from '@angular/router'
-import { Route } from '@angular/compiler/src/core';
+
 
 @Component({
   selector: 'app-tab1',

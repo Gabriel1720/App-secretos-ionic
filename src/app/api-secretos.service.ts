@@ -34,6 +34,18 @@ export class ApiSecretosService {
     return this.httpClient.get<any>(`${Credenciales.APP_URL}/usuario/secretos`, header); 
  }
 
+ nuevoSecreto(secreto, token): Observable<any>{
+  const header = {
+     headers : new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+        'accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
+     })
+  };    
+ 
+  return this.httpClient.post<any>(`${Credenciales.APP_URL}/usuario/nuevo-secreto`, secreto, header); 
+}
+
 
   deleteSecreto(id:BigInteger, token:string):Observable<any>{
     const header = {
