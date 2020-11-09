@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, Validators} from '@angular/forms'
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiSecretosService } from '../api-secretos.service';
+import {Storage} from '@ionic/storage';
 
 @Component({
   selector: 'app-tab3',
@@ -15,7 +16,8 @@ export class Tab3Page implements OnInit {
   constructor(
      private service: ApiSecretosService,
      private formBuilder: FormBuilder,
-     private router: Router 
+     private router: Router,
+     private storage: Storage
   ) {}
 
    ngOnInit():void
@@ -40,5 +42,12 @@ export class Tab3Page implements OnInit {
   });    
   */
 }
+
+LogOut()
+  {
+      this.storage.clear().then(() => {
+        this.router.navigate(['/login'])
+      })
+  }
 
 }
