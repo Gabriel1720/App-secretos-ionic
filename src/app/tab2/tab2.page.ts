@@ -51,7 +51,9 @@ export class Tab2Page implements OnInit {
               console.log("code", info.status_code);
               if(info.status_code == 200){
                 this.formSecreto.reset(); 
-                this.PrensentToast("Nuevo secreto creado.")
+                this.PrensentToast("Nuevo secreto creado.").then(() => {
+                  this.router.navigate(['/tabs/tab1']);
+                })
               } else {
                   this.PrensentToast("Error al crear secreto.")
               }

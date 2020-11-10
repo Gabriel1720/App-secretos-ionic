@@ -14,6 +14,7 @@ import {Router} from '@angular/router'
 export class Tab1Page implements OnInit{
   private token:any; 
   lista_secretos:ISecreto[] = []; 
+  loading:boolean = true;  
 
   constructor(
     private service: ApiSecretosService,
@@ -25,8 +26,14 @@ export class Tab1Page implements OnInit{
 
   async ngOnInit()
   {
-      await this.getToken();
-      await this.LoadSecretos();
+      
+  }
+
+  async ionViewDidEnter()
+  { 
+    await this.getToken();
+    this.lista_secretos = [] ; 
+    this.LoadSecretos(); 
   }
 
    // JSON "get" example
@@ -40,10 +47,8 @@ export class Tab1Page implements OnInit{
         })
   }
 
- async delete(id:BigInteger){
-      await this.presentAlert(id).then( () => {
-          this.router.navigate(["/tabs/tab1"])
-      });
+  delete(id:BigInteger){
+    this.presentAlert(id); 
   }
 
   LogOut()
@@ -72,10 +77,14 @@ export class Tab1Page implements OnInit{
 
   async LoadSecretos(){
     await this.service.listaSecretos(this.token).subscribe(lista => {
-      lista.Secretos.forEach(secreto => {
-          this.lista_secretos.push(secreto);
-           console.log(secreto)
-       });
+      this.loading = false; 
+      
+      if(lista.Secretos != null ){
+          lista.Secretos.forEach(secreto => {
+            this.lista_secretos.push(secreto);
+            console.log(secreto)
+        });
+      }
    })
   }
 
@@ -99,7 +108,10 @@ export class Tab1Page implements OnInit{
               console.log('Sea eliminado');
               this.service.deleteSecreto(id, this.token).subscribe(datos =>{
                 if(datos.Borrado){
-                  this.PrensentToast("Sea eliminado un secreto.");
+                  this.PrensentToast("Sea eliminado un secreto.").then(() => {
+                    this.lista_secretos = [] ;
+                    this.LoadSecretos();
+                  });
         
                 } else {
                   this.PrensentToast("Error al eliminar secreto.");

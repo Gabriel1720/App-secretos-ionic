@@ -57,4 +57,36 @@ export class ApiSecretosService {
     return this.httpClient.delete<any>(`${Credenciales.APP_URL}/usuario/secreto/${id}`, header); 
   }
 
+  getUsuarioDatos(token:string): Observable<any>{
+    const header = {
+       headers : new HttpHeaders({
+          Authorization: `Bearer ${token}`
+       })
+    };
+  
+     return this.httpClient.get("http://127.0.0.1:8000/usuario", header); 
+ }
+
+ updateUsuarioDatos(usuario:any, token:string): Observable<any>{
+  const header = {
+     headers : new HttpHeaders({
+        Authorization: `Bearer ${token}`
+     })
+  };
+
+   return this.httpClient.put(`${Credenciales.APP_URL}/modificar/datos`,usuario,  header); 
+}
+
+
+updatePassword(datos:any, token:string): Observable<any>{
+  const header = {
+     headers : new HttpHeaders({
+        Authorization: `Bearer ${token}`
+     })
+  };
+
+   return this.httpClient.put(`${Credenciales.APP_URL}/modificar/clave`, datos,  header); 
+}
+
+
 }

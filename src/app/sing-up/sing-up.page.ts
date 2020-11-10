@@ -41,6 +41,5 @@ export class SingUpPage implements OnInit {
       }
    });    
  }
- 
 
 }
